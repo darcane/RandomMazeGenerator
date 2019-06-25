@@ -52,22 +52,28 @@ class Box {
     }
 
     breakWall(direction) {
+        stroke(200, 20, 20);
         switch (direction) {
             case 0:
+                line(this.x + this.w / 2, this.y, this.x + this.w / 2, this.y + this.w / 2);
                 this.up = false;
                 break;
             case 1:
+                line(this.x + this.w, this.y+ this.w/2, this.x + this.w / 2, this.y + this.w / 2);
                 this.right = false;
                 break;
             case 2:
+                line(this.x+ this.w/2, this.y+ this.w, this.x + this.w / 2, this.y + this.w / 2);
                 this.down = false;
                 break;
             case 3:
+                line(this.x, this.y+ this.w/2, this.x + this.w / 2, this.y + this.w / 2);
                 this.left = false;
                 break;
 
             default:
                 break;
         }
+        noStroke();
     }
 }

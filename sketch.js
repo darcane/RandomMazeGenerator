@@ -3,11 +3,15 @@ let w = 30;
 let boxes = [];
 let stack = [];
 let crt, colC, rowC;
+let speed;
 
 function setup() {
   createCanvas(900, 900);
   noStroke();
-  frameRate(50);
+
+  speed = createSlider(1,51,5,5);
+  speed.input(changeFrameRate);
+  frameRate(speed.value());
 
   colC = width / w;
   rowC = height / w;
@@ -138,4 +142,8 @@ function drawBoxes() {
   boxes.forEach(box => {
     box.show();
   });
+}
+
+function changeFrameRate(){
+  frameRate(speed.value());
 }
