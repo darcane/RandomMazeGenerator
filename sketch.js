@@ -95,12 +95,12 @@ function draw() {
 }
 
 function rollDirection() {
-  return parseInt(random(0, 4));
+  return floor(random(4));
 }
 
 function doesHaveNonVisitedNeig(box) {
   let index = boxes.indexOf(box);
-  let y = parseInt(index / colC);
+  let y = floor(index / colC);
   let x = index % colC;
   if (y === 0 && x === 0) {
     return !boxes[index + 1].isUsed() ||
